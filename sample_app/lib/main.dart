@@ -1,4 +1,4 @@
-import 'package:facebook_ui/login.dart';
+import 'package:facebook_ui/list_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,10 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false, 
         title: 'Sample Project',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 34, 5, 200)),
         ),
-        home: const FacebookLogin());
+        home: ListViewPage());
   }
 }
