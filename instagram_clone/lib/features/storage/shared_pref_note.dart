@@ -4,24 +4,28 @@ class SharedPrefNote {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   List<String> noteList = [];
 
-  // Method to store a value in the list
+  //method one
   Future<void> store({required String key, required String v}) async {
     final SharedPreferences prefs = await _prefs;
-    noteList = prefs.getStringList(key) ?? [];
+    //! fetch previous list
+    //! get list from store and save it to notelist
+    noteList.addAll(prefs.getStringList(key) ?? []);
     noteList.add(v);
     prefs.setStringList(key, noteList);
     print(prefs.getStringList(key));
   }
 
-  // Method to get the list of values
-  Future<List<String>> getValues({required String key}) async {
+//method two
+  Future<String> getValues({required String key}) async {
     final SharedPreferences prefs = await _prefs;
-    return prefs.getStringList(key) ?? [];
+    final String? value = prefs.getString(key);
+    return value ?? 'No Value Received'; 
   }
 
-  // Method to delete a value
-  Future<void> deleteValue({required String key}) async {
+  //method two
+  Future<void> deleteValue({required var key}) async {
     final SharedPreferences prefs = await _prefs;
     prefs.remove(key);
   }
 }
+

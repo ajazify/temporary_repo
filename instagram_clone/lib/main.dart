@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LocalStorage(),
+      home:  LocalStorage(),
       // routes: <String, WidgetBuilder>{
       //   '/home': (BuildContext context) => const Home(title: 'Instagram'),
       //   '/follow': (BuildContext context) => const Follow(),
