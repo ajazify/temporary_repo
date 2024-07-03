@@ -3,6 +3,7 @@ import 'package:instagram_clone/features/follow/follow.dart';
 import 'package:instagram_clone/features/home/home.dart';
 import 'package:instagram_clone/features/loading/loading.dart';
 import 'package:instagram_clone/features/login/login.dart';
+import 'package:instagram_clone/features/more_widgets/radio_button.dart';
 import 'package:instagram_clone/features/storage/sharedPreferences.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  LocalStorage(),
+      home: MyRadioButton(),
       // routes: <String, WidgetBuilder>{
       //   '/home': (BuildContext context) => const Home(title: 'Instagram'),
       //   '/follow': (BuildContext context) => const Follow(),

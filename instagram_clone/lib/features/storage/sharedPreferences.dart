@@ -21,7 +21,7 @@ class _LocalStorageState extends State<LocalStorage> {
 
   void _refreshNotes() {
     setState(() {
-      _notesFuture = sharedPrefNote.getValues(key: KeyConst.NOTEKEY);
+      _notesFuture = sharedPrefNote.read(key: KeyConst.NOTEKEY);
     });
   }
 
@@ -119,7 +119,7 @@ class _LocalStorageState extends State<LocalStorage> {
                 IconButton(
                   onPressed: () async {
                     if (controller.text.isNotEmpty) {
-                      await sharedPrefNote.store(key: KeyConst.NOTEKEY, v: controller.text);
+                      await sharedPrefNote.write(key: KeyConst.NOTEKEY, v: controller.text);
                       controller.clear();
                       _refreshNotes();
                     }
@@ -139,4 +139,3 @@ class _LocalStorageState extends State<LocalStorage> {
 class KeyConst {
   static const NOTEKEY = 'noteKey';
 }
- 
